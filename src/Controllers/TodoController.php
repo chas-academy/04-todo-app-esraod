@@ -36,8 +36,7 @@ class TodoController extends Controller {
           // use the redirect method to send the user back to the list of todos $this->redirect('/');
         // otherwise, throw an exception or show an error message
     }
-
-    public function delete($urlParams)
+        public function delete($urlParams)
     {
       // TODO: Implement me!
     }
