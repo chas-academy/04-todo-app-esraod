@@ -1,3 +1,3 @@
 <?php
 
-define('SITE_NAME', 'Todo');
+define('SITE_NAME', 'TODO -  Esra Oktav');
