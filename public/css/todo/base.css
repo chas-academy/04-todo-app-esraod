@@ -18,10 +18,15 @@ button {
   appearance: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
+  background-color: rgb(215, 215, 215);
+  color: #f5f5f5;
+  padding: 3px;
+  border-radius: 5px;
 }
 
 body {
-  font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font: 14px 'Comfortaa', cursive;
   line-height: 1.4em;
   background: #f5f5f5;
   color: #4d4d4d;
@@ -32,6 +37,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-weight: 300;
 }
+
+
 
 form {
   margin: 0;
@@ -49,7 +56,7 @@ form {
   background: #fff;
   margin: 130px 0 40px 0;
   position: relative;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+  /*box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);*/
 }
 
 .todoapp input::-webkit-input-placeholder {
@@ -72,12 +79,12 @@ form {
 
 .todoapp h1 {
   position: absolute;
-  top: -155px;
+  top: -70px;
   width: 100%;
-  font-size: 100px;
-  font-weight: 100;
-  text-align: center;
-  color: rgba(175, 47, 47, 0.15);
+  font-size: 50px;
+  font-weight: 500;
+  text-align: right;
+  color:  silver;
   -webkit-text-rendering: optimizeLegibility;
   -moz-text-rendering: optimizeLegibility;
   text-rendering: optimizeLegibility;
@@ -92,11 +99,11 @@ form {
   font-family: inherit;
   font-weight: inherit;
   line-height: 1.4em;
-  border: 0;
+  border-bottom: 5px solid #f5f5f5;
   color: inherit;
   padding: 6px;
-  border: 1px solid #999;
-  box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.2);
+  /*border: 0px solid #999;*/
+  /*box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.2);*/
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -106,13 +113,13 @@ form {
   padding: 16px 16px 16px 60px;
   border: none;
   background: rgba(0, 0, 0, 0.003);
-  box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0.03);
+  /*box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0.03);*/
 }
 
 .main {
   position: relative;
   z-index: 2;
-  border-top: 1px solid #e6e6e6;
+  border-top: 10px solid #f5f5f5;
 }
 
 .toggle-all {
@@ -140,7 +147,7 @@ form {
   content: '❯';
   font-size: 22px;
   color: #e6e6e6;
-  padding: 10px 27px 10px 27px;
+  padding: 10px 27px 10px 17px;
 }
 
 .toggle-all:checked + label:before {
@@ -156,8 +163,8 @@ form {
 .todo-list li {
   display: flex;
   position: relative;
-  font-size: 24px;
-  border-bottom: 1px solid #ededed;
+  font-size: 20px;
+  border-bottom:5px solid #f5f5f5;
 }
 
 .todo-list li:last-child {
@@ -263,10 +270,11 @@ form {
 
 .footer {
   color: #777;
-  padding: 10px 15px;
-  height: 20px;
+  background-color: #f5f5f5;
+  padding: 8px 15px;
+  height: 1px;
   text-align: center;
-  border-top: 1px solid #e6e6e6;
+  border-top: 0px solid #f5f5f5;
 }
 
 .footer:before {
@@ -277,9 +285,10 @@ form {
   left: 0;
   height: 50px;
   overflow: hidden;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 8px 0 -3px #f6f6f6,
+  border-radius: 20px;
+ /*box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 8px 0 -3px #f6f6f6,
     0 9px 1px -3px rgba(0, 0, 0, 0.2), 0 16px 0 -6px #f6f6f6,
-    0 17px 2px -6px rgba(0, 0, 0, 0.2);
+    0 17px 2px -6px rgba(0, 0, 0, 0.2);*/
 }
 
 .todo-count {
@@ -340,10 +349,12 @@ html .clear-completed:active {
   font-size: 10px;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
   text-align: center;
+  
 }
 
 .info p {
   line-height: 1;
+  
 }
 
 .info a {
@@ -353,7 +364,7 @@ html .clear-completed:active {
 }
 
 .info a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /*
@@ -379,4 +390,14 @@ html .clear-completed:active {
   .filters {
     bottom: 10px;
   }
+}
+
+a {
+  text-decoration: none;
+  color: rgb(215, 215, 215);
+}
+
+p {
+  color: #777;
+ text-align: center;
 }
