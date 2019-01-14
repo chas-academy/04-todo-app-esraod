@@ -1,7 +1,7 @@
 <header class="header">
-    <h1>todos</h1>
+    <h1 id="title-for-app">todo</h1>
     <form id="create-todo" method="post" action="todos">
-      <input name="title" class="new-todo" placeholder="What needs to be done?" autofocus>
+      <input name="title" class="new-todo" placeholder="Add something to do" autofocus>
     </form>
 </header>
 
