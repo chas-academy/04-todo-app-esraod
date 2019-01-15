@@ -25,6 +25,11 @@ button {
   border-radius: 5px;
 }
 
+button:hover {
+  background-color: transparent;
+  color: rgb(215, 215, 215);
+}
+
 body {
   font: 14px 'Comfortaa', cursive;
   line-height: 1.4em;
@@ -108,6 +113,11 @@ form {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.edit{
+  line-height: 1em;
+  font-size: 20px;
+  border: 3px solid #fff;
+}
 
 .new-todo {
   padding: 16px 16px 16px 60px;
@@ -133,25 +143,38 @@ form {
 }
 
 .toggle-all + label {
-  width: 60px;
-  height: 34px;
+  width: 50px;
+  height: 50px;
   font-size: 0;
   position: absolute;
-  top: -52px;
-  left: -13px;
-  -webkit-transform: rotate(90deg);
-  transform: rotate(90deg);
+  top: -65px;
+  left: -1px;
+  /*-webkit-transform: rotate(90deg);
+  transform: rotate(90deg);*/
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAABNUlEQVRIidWUMU4DMRBF3zhcgQiJ2Np0KXIJWETDPVLQcB1yAcQNKCABzpAUdGvZkZCSI5DYVCttkUVehyDxq9GM/N/YYxv+u6QOrLU3wBQ47+ixAiZFUTztK6pGfJ9hDjAQkWlbsQkYZJgDEGPUKYCjKAewAcoY42Jf0VobrbUxF7BWSl0WRTEXkbuUBW2AjxjjBfDZyG16vd6VMWZZVdUIeDgEcDscDt+UUtfAuu5ca71wzo1F5B04OwTw6JwbG2OWSqlSKVUaY5bOuXEIYQb0U8wBTlry/RDC3Htfaq0XAFVVjUIIz13MfwIAnO52u5n3vtxut18i8krisaQCasiLiEDHzlMB2ca1/vQlr3JNRMSnACY5EBHxIYRJTmNZOvQv6qzWW9TsoquaM/n1Hfz5TI6ub1Vyb70MzVnMAAAAAElFTkSuQmCC');
 }
 
 .toggle-all + label:before {
-  content: '❯';
-  font-size: 22px;
-  color: #e6e6e6;
-  padding: 10px 27px 10px 17px;
+  /*content: '☒';
+  font-size: 32px;
+  color: #e6e6e6;*/
+
+  /*padding: 10px 27px 10px 17px;☑*/
+  padding: 10px 10px 0px 10px;
+  margin-left: 17px;
+  
+
 }
+
+
 
 .toggle-all:checked + label:before {
   color: #737373;
+  /*background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAABOUlEQVRIidWUMU4DMRBF/1hcgQgJ6FPsJWARDVdwXKag4Tqk9VoWN0gBCXCGpKBPJKTkCEjzabIrhLKR12iR8ivLY/839tgDHLukHlRVdSciEwDnHT3WAMbW2um+oGlIIo8Z5gBwAWDSFjS/FubqMgXQizoDSG5VtQSw2BcPITCEwFzAhuS1c24uIg8pG9oAHySvAHzWEyS3AG6cc8sY45BkzAaIyP1oNHpT1VsAmzpza+3Ce1+o6juAs2wAySfvfeGcW6pqqaqlc27pvS+MMTMAgxRzADhpmR+IyDyEUFprFwAQYxyq6nMX80MAiMgpyVkIoTTGfKnqKxKvJQlQQwC8qCrQMfMkwE5ZxrX+9Sev/+CzSgGMMyErkuO2YFODXT9v7Yq56r0Gra/oZ0fMUFOTPk5wsCbHp28LjH06o71xjAAAAABJRU5ErkJggg=='); */
 }
 
 .todo-list {
@@ -165,6 +188,7 @@ form {
   position: relative;
   font-size: 20px;
   border-bottom:5px solid #f5f5f5;
+  padding-left: 15px;
 }
 
 .todo-list li:last-child {
@@ -210,13 +234,14 @@ form {
 		Firefox requires `#` to be escaped - https://bugzilla.mozilla.org/show_bug.cgi?id=922433
 		IE and Edge requires *everything* to be escaped to render, so we do that instead of just the `#` - https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/7157459/
 	*/
-  background-image: url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%22-10%20-18%20100%20135%22%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2250%22%20fill%3D%22none%22%20stroke%3D%22%23ededed%22%20stroke-width%3D%223%22/%3E%3C/svg%3E');
+  /*background-image: url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%22-10%20-18%20100%20135%22%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2250%22%20fill%3D%22none%22%20stroke%3D%22%23ededed%22%20stroke-width%3D%223%22/%3E%3C/svg%3E');*/
   background-repeat: no-repeat;
   background-position: center left;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAAZklEQVRIie2NsQ2AMAwEj6wB1BmGPTITmYRd0iZ7PBVSChQkkgIJX+e3/QfGA1M9pJQ2SRGYX/YVIHjvjytw9VbS3lEOsACxDtzNQS9rSzAcE5jABCb4oqAM6MwtQeiUZEmh4/+PnH20FRl4699hAAAAAElFTkSuQmCC');
 }
 
 .todo-list li .toggle:checked + label {
-  background-image: url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%22-10%20-18%20100%20135%22%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2250%22%20fill%3D%22none%22%20stroke%3D%22%23bddad5%22%20stroke-width%3D%223%22/%3E%3Cpath%20fill%3D%22%235dc2af%22%20d%3D%22M72%2025L42%2071%2027%2056l-4%204%2020%2020%2034-52z%22/%3E%3C/svg%3E');
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAABNElEQVRIie2STU7DMBCFX2yuQIUEbBNshTMgYcSGHRJXyKIHKvQkLGhBnCGRTbJtJaT0CGhsFiRSVLVu/ljBW9kz9vvGMwb+dUBBc1MUxZ1zbg7gtKffGkASRdFzHWDNrHPuaYA5AJwBmDcDbMeBoTr3AUbXGIAyCILH3wKURKTCMJwCmI0N2Fhrb6SUWZ7nFwDuxwRsrLVKCJFW5m8ATjoBqr6WO1IlEV0LIVKtdQzgfZ+5DzALw3BKRGoLUhKRklJmWuuYc74EMNln7gM8GGMupZQZgCsAn9jqOef85ZC5D3DMGFtoreMoij6I6LZLW5o68uQmnPNXY4wSQqQAUA20VeVtAMDPS5bGGMUY+4Lnt/QF1JBFtW5deRdAL+Na20Ne9zVqaOUDJAMhK+dcMuD+X9Q3oe50Y37XQaIAAAAASUVORK5CYII=');
 }
 
 .todo-list li label {
@@ -236,24 +261,25 @@ form {
   display: none;
   position: absolute;
   top: 0;
-  right: 10px;
+  right: 0px;
   bottom: 0;
   width: 40px;
   height: 40px;
   margin: auto 0;
-  font-size: 30px;
-  color: #cc9a9a;
+  font-size: 25px;
+  color: #fee377;
   margin-bottom: 0;
   transition: color 0.2s ease-out;
   text-decoration: none;
+  margin-top: 18px;
 }
 
 .todo-list li .destroy:hover {
-  color: #af5b5e;
+  color: #ffcc00;
 }
 
 .todo-list li .destroy:after {
-  content: '×';
+  content: '✖';
 }
 
 .todo-list li:hover .destroy {
@@ -262,6 +288,7 @@ form {
 
 .todo-list li .edit {
   display: none;
+ 
 }
 
 .todo-list li.editing:last-child {
@@ -340,7 +367,7 @@ html .clear-completed:active {
 }
 
 .clear-completed:hover {
-  text-decoration: underline;
+ /* text-decoration: underline;*/
 }
 
 .info {
