@@ -26,8 +26,14 @@ class TodoController extends Controller {
     {
         $body = filter_body(); // gives you the body of the request (the "envelope" contents)
         $todoId = $urlParams['id']; // the id of the todo we're trying to update
-        $completed = isset($body['status']) ? 1 : 0; // whether or not the todo has been checked or not
+        $completed = isset($body['status']) ? 'true' : 'false'; // whether or not the todo has been checked or not
 
+        $result = TodoItem::updateTodo($todoId, $body['title'], $completed);
+
+        if ($result) {
+          $this->redirect('/');
+        }
+        
         // TODO: Implement me!
         // This action should update a specific todo item in the todos table using the TodoItem::updateTodo method.
         // Try and figure out what parameters you need to pass to the updateTodo-method in the TodoItem model.
@@ -36,9 +42,14 @@ class TodoController extends Controller {
           // use the redirect method to send the user back to the list of todos $this->redirect('/');
         // otherwise, throw an exception or show an error message
     }
-        public function delete($urlParams)
-    {
+        public function delete($urlParams) {
+          
       // TODO: Implement me!
+          $result = TodoItem::deleteTodo($urlParams['id']);
+          
+          if ($result) {
+            $this->redirect('/');
+        }
     }
 
     /**
