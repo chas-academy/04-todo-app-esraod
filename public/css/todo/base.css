@@ -185,7 +185,7 @@ form {
   position: relative;
   font-size: 20px;
   border-bottom:5px solid #f5f5f5;
-  padding-left: 15px;
+  padding-left: 2px;
 }
 
 .todo-list li:last-child {
