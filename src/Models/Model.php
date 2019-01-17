@@ -32,7 +32,7 @@ abstract class Model
     public static function findAll()
     {
         try {
-            $query = "SELECT * FROM " . static::TABLENAME . " ORDER BY created DESC";
+            $query = "SELECT * FROM " . static::TABLENAME . " ORDER BY completed ASC";
             self::$db->query($query);
             $results = self::$db->resultset();
 
