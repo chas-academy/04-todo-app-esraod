@@ -1,100 +1,88 @@
-# 04-todo-app
-A todo app in PHP
+# 04-todo-app-esraod :page_facing_up:
 
-# Quickstart (vagrant)
-0. Download and install [Vagrant](https://www.vagrantup.com/) and [Virtualbox](https://www.virtualbox.org/wiki/Downloads) for your operating system.
-1. Clone this project to your machine.
-2. `cd /path-to/where/you/cloned/this`.
-3. `composer install`.
-4. `composer dump-autoload`.
-5. `vagrant up`.
-6. Browse to adminer on http://192.168.33.10/admin/index.php.
-7. Open up the contents of `data/init.sql` in your editor.
-8. Copy the contents of `data/init.sql` to your clipboard.
-9. Paste the contents of your clipboard into the SQL-command window in adminer.
-10. Click the "Execute" button, this will create the table with three example todo items.
-11. Now browse to http://192.168.33.10, you should see three todo-items in your list.
+~ *Esra Oktav Dinler [2019/01/20]*
 
-# How to proceed
-Start by familiarizing yourself with the codebase. Look inside the `src/` folder. Some things to consider:
-  - All of the routes needed to pass are already defined. You don't need to add any more.
-  - The UI and some JS-magic is already implemented. Don't change this. 
+</br>
 
-    > (Hint: to edit a todo-item you can _double-click_ the title of it, this will show an input field that you can then submit using the _Enter_ key, if you hit _Escape_, the changes will be reverted the same is true if you click outside the input.)
+**[Project URL]** (http://todo.esraoktav.chas.academy/)
 
-  - The MVC structure is also pre-defined, no need to add new files to pass this assignment.
-  - There doesn't need to be any more separate view-files to pass this assignment.
+**[Link to project]** - ([Project](http://todo.esraoktav.chas.academy/))
 
-## Here's what you need to do:
-1. You need to complete `TodoController` and `TodoItem` in order for the app to work properly.
-2. Inside `TodoController` start by completing the `delete()` action. The corresponding model method is called `deleteTodo()`.
-   In the app, when you hover over a todo item, a small "x"-symbol appears. This is an anchor-text element that will trigger the corresponding route to delete that specific todo-item.
-3. Continue along with the other actions in `TodoController` and their corresponding methods in `TodoItem` until you're done. 
+---------------------------------
 
-## When it's time to deploy to Binero
-To make life easier, we'll be creating a subdomain for this hand-in on Binero. Follow along with the steps below:
+</br>
 
-1) Login to your Binero account.
-2) Go to "Domän och Webbplats" > "Webbplatser"
-3) You should have one named something along the lines of `firstnamelastname.chas.academy`
-4) Press "Lägg till"
-5) Under "Domäntyp" select "Subdomän"
-6) In the dropdown menu select the `firstnamelastname.chas.academy` item.
-7) In the box to the left of the dropdown input `todo`.
-8) In the "Typ av webbplats" section, select the `Linux/Apache` radio-button.
-9) In the "E-poststöd" section, select `Avaktivera`.
-10) Click the `Lägg till webbplats` button.
-11) Wait until the process is finished.
-12) Now use your FTP-client of choice (e.g. FileZilla) and connect with your Binero credentials. If you've forgotten them you can create new ones under `Filer > FTP`.
-13) Now, upload the contents of the `public` folder only, into the `todo.firstnamelastname.chas.academy/public_html/` folder on Binero.
-14) Next, in the `todo.firstnamelastname.chas.academy/` folder, upload the following:
+## The Task
 
-    - `config/`
-    - `src/`
-    - `vendor/`
-    - `composer.json`
-    - `composer.lock`
+- Creating a Todo-app
 
-15) If you've done it correctly you should have the following structure:
-![](https://i.ibb.co/7rPvfBQ/app-structure-binero.png)
 
-16) After having done this you should get an error message if you browse to `http://todo.firstnamelastname.chas.academy`.
-17) To get it working you need to create a MySQL database on Binero and run the SQL to create the `todos` table. Here's how you do that:
-    1. Go to your Binero panel and navigate to `Databaser > MySQL`.
-    2. Press the `Lägg till databas` button.
-    3. In the `Namn på databas` input, simply write `todo-app-db`.
-    4. In the `Lösenord` input fields, put down a password that you'll remember.
-    5. Make sure to copy the `Standardanvändare` text and save that for later. It should read something like `226706_aj66261`.
-    6. Press the `Lägg till` button.
-    7. Wait until the process in finished.
-    8. When the database is created, the table should now contain an item, for that item there should be three buttons `Ändra/Visa`, `PHPMYADMIN` and `X`. Press the `PHPMYADMIN` one.
-    9. Login with the credentials you put in from steps 4. and the username from step 5.
-    10. After login click the `SQL` tab.
-    11. In the input field, write the following SQL-query:
+</br>
 
-    ```SQL
-    CREATE TABLE `todos` (
-      `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-      `title` varchar(100) NOT NULL DEFAULT '',
-      `created` datetime NOT NULL,
-      `completed` enum('false', 'true') NOT NULL DEFAULT 'false',
-      PRIMARY KEY (`id`)
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+#### The Task Requirements/Goals:
 
-    INSERT INTO `todos` (`title`, `created`, `completed`)
-    VALUES
-      ('create a todo', now(), 'false'),
-      ('do laundry', now(), 'false'),
-      ('finish todo app', now(), 'false');
-    ```
-    12. Press the `Go` button.
-18) Now that you've successfully created the database and the `todos` table with some sample data, make sure you update the `config/credentials.php` file on Binero to contain the values for the setup there. Here's an example of what it could look like:
+- Work in *several browsers* and *different types of devices* (*mobile, desktop*).
+- **Responsive** on some level (should be able to use on every type of *device*).
+- A **MySQL** database with a *table* that stores the *to-do tasks*
+- A working deployed **to-do list application** made in *object-oriented PHP* with *MVC* and a *MySQL-database* for storing.
+- A input field that can create new to-do tasks in a list.
+- Being able to *sort* and *filter* the list based on the status (*completed/ not completed*)
+##### The visitor should be able to create:
+- **Create** a to-do ***list***
+- **Show** to-do tasks in ***a list***
+- **Create** to-do tasks in ***a list***
+- **Update** to-do tasks in ***a list***
+- **Remove** to-do tasks in ***a list***
 
-  ```PHP
-  <?php
-      define('DB_HOST', 'my03b.sqlserver.se');
-      define('DB_USER', '226706_hs24585');
-      define('DB_PASS', 'passwordgoeshere');
-      define('DB_NAME', '226706-todo-app-db');
-  ```
-19) If you've folloed the steps carefully you should now be able to see the working app live at your domain `http://todo.firstnamelastname.chas.academy`
+
+
+
+</br>
+
+#### Optional:
+- [x] Making the user able to clear all completed tasks.
+- [ ] Toggle all todos to completed/ not completed.
+
+</br>
+
+#### Extra Challanges:
+- [ ]  Make the user able to filter the todo-list tasks with an extra search-field.
+- [ ]  Make the user being able to change order on to-do tasks in a list
+- [ ]  The user should be able to register them selfs and create own lists
+- [ ]  Users should be able to co-work on a lists.
+
+</br>
+
+## What todo-app is this?
+
+- *An app for listing to do's (tasks) / Checklist*
+###### The user can do following using this todo-app:
+- Creating new todos
+- Deleting todos
+- Deleting (clear completed) all completed todos buy using the "Clear completed"-Button.
+- Check/-uncheck todos in the list.
+- Editing a todo buy double clicking on it (Note: Does not work on mobile devices).
+- See the amount of item(s) left.
+- The list automatically makes the last created todo appear on the top of the list, Moves down completed todos on the list and  moves back a todo that was completed to the specific todos old position in the list.
+
+
+
+</br>
+
+## Where to use it?/ RESULT 
+- [Link](http://todo.esraoktav.chas.academy/)
+
+- Project URL (http://todo.esraoktav.chas.academy/)
+
+</br>
+
+## Author
+**Esra Oktav Dinler**
+
+- github/
+[esraod](https://www.github.com/esraod) :octocat:
+- [Other Projects](http://esraoktav.chas.academy/)
+
+
+-------------------------------------------------------
+*This is made on 20 January, 2019.*
