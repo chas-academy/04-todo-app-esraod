@@ -145,10 +145,14 @@ form {
 }
 
 .toggle-all + label:before {
+
+  /* DELETE THIS COMMENT WHEN THE TOGGLE ALL FUNCTION WORKS 
   content:  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAABNUlEQVRIidWUMU4DMRBF3zhcgQiJ2Np0KXIJWETDPVLQcB1yAcQNKCABzpAUdGvZkZCSI5DYVCttkUVehyDxq9GM/N/YYxv+u6QOrLU3wBQ47+ixAiZFUTztK6pGfJ9hDjAQkWlbsQkYZJgDEGPUKYCjKAewAcoY42Jf0VobrbUxF7BWSl0WRTEXkbuUBW2AjxjjBfDZyG16vd6VMWZZVdUIeDgEcDscDt+UUtfAuu5ca71wzo1F5B04OwTw6JwbG2OWSqlSKVUaY5bOuXEIYQb0U8wBTlry/RDC3Htfaq0XAFVVjUIIz13MfwIAnO52u5n3vtxut18i8krisaQCasiLiEDHzlMB2ca1/vQlr3JNRMSnACY5EBHxIYRJTmNZOvQv6qzWW9TsoquaM/n1Hfz5TI6ub1Vyb70MzVnMAAAAAElFTkSuQmCC');	  
   font-size: 22px;
   color: #e6e6e6;
   padding: 10px 27px 10px 30px;
+  */
+
   /*content: '☒';
   font-size: 32px;
   color: #e6e6e6;
@@ -160,7 +164,10 @@ form {
 
 .toggle-all:checked + label:before {
   /*color: #737373;*/
+
+  /* DELETE THIS COMMENT WHEN THE TOGGLE ALL FUNCTION WORKS 
   content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAAZklEQVRIie2NsQ2AMAwEj6wB1BmGPTITmYRd0iZ7PBVSChQkkgIJX+e3/QfGA1M9pJQ2SRGYX/YVIHjvjytw9VbS3lEOsACxDtzNQS9rSzAcE5jABCb4oqAM6MwtQeiUZEmh4/+PnH20FRl4699hAAAAAElFTkSuQmCC');
+*/
 }
 
 .todo-list {
